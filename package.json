@@ -1,0 +1,45 @@
+{
+  "name": "bf-playgrounds",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "NODE_ENV=production webpack -c --progress",
+    "clean": "rm -rf build/*",
+    "create": "./cli/bin/playgrounds create",
+    "prebuild": "npm run clean",
+    "prestart": "npm run build",
+    "start": "NODE_ENV=production node ./server",
+    "start:dev": "nodemon ./server --watch ./server",
+    "test": "NODE_ENV=test mocha",
+    "test-watch": "NODE_ENV=test mocha -R min -w"
+  },
+  "devDependencies": {
+    "async": "^2.0.0-rc.2",
+    "babel-eslint": "^6.0.4",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "consolidate": "^0.14.0",
+    "download-git-repo": "^0.1.1",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^6.2.0",
+    "handlebars": "^4.0.5",
+    "inquirer": "^0.12.0",
+    "metalsmith": "^2.1.0",
+    "minimatch": "^3.0.0",
+    "ora": "^0.2.1",
+    "read-metadata": "^1.0.0",
+    "request": "^2.67.0",
+    "rimraf": "^2.5.0",
+    "semver": "^5.1.0",
+    "validate-npm-package-name": "^2.2.2"
+  },
+  "dependencies": {
+    "babel-core": "~6.5.2",
+    "babel-preset-es2015": "~6.5.0",
+    "babel-preset-stage-0": "~6.5.0",
+    "babel-register": "^6.6.5",
+    "cookies-js": "^1.2.2",
+    "cors": "^2.7.1",
+    "express": "~4.13.4",
+    "morgan": "~1.7.0"
+  }
+}

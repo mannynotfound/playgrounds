@@ -1,0 +1,31 @@
+{
+  "prompts": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "message": "Playground name"
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "message": "Playground description",
+      "default": "A BuzzFeed playground"
+    },
+    "author": {
+      "type": "string",
+      "message": "Author"
+    },
+    "lint": {
+      "type": "confirm",
+      "message": "Use ESLint to lint your code?"
+    },
+    "solid": {
+      "type": "confirm",
+      "message": "Use Solid CSS Framework?"
+    }
+  },
+  "filters": {
+    ".eslintrc.js": "lint"
+  },
+  "completeMessage": "To get started:\n\n  cd playgrounds/{{destDirName}}\n  npm install\n  npm run dev\n\n"
+}

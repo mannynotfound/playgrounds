@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var path = require('path');
+var chalk = require('chalk');
+var logger = require('../lib/logger');
+var generate = require('../lib/generate');
+
+/**
+ * Usage.
+ */
+
+program
+  .usage('[project-name] [template name]')
+  .parse(process.argv);
+
+program.on('--help', function() {
+  console.log('  Examples:');
+  console.log();
+  console.log(chalk.gray('    # create a new project with an official template'));
+  console.log('    $ playgrounds create my-project');
+  console.log();
+});
+
+if (!program.args.length) {
+  program.help();
+}
+
+/**
+ * Generation.
+ */
+
+
+var chosenTemplate = program.args[1] || 'webpack-simple';
+var template = path.resolve(__dirname, '../templates/' + chosenTemplate);
+var name = program.args[0];
+var to = path.resolve(__dirname, '../../playgrounds/' + name);
+
+console.log();
+generate(name, template, to, function(err) {
+  if (err) {
+    logger.fatal(err);
+  }
+
+  console.log();
+  logger.success('Generated "%s".', name);
+});
+
+process.on('exit', function() {
+  console.log();
+});

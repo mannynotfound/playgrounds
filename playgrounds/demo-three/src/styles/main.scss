@@ -1,0 +1,30 @@
+@import '~bf-solid/_lib/solid';
+
+html, body, #container {
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.pg-logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.bf-logo {
+  width: 150px;
+}
+
+.pf-text {
+  font-size: 32px;
+  letter-spacing: -0.5px;
+  position: relative;
+  top: -2px;
+  left: -4px;
+  color: white;
+}

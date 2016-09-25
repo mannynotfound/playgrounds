@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+require('commander')
+  .version('1.0.0')
+  .usage('<command> [options]')
+  .command('create', 'generate a new playground')
+  .parse(process.argv)
