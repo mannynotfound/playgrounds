@@ -5,6 +5,7 @@ var path = require('path');
 var chalk = require('chalk');
 var logger = require('../lib/logger');
 var generate = require('../lib/generate');
+var buzzLogger = require('../lib/buzzscii');
 
 /**
  * Usage.
@@ -36,7 +37,12 @@ var template = path.resolve(__dirname, '../templates/' + chosenTemplate);
 var name = program.args[0];
 var to = path.resolve(__dirname, '../../playgrounds/' + name);
 
-console.log();
+buzzLogger({
+  color: 'red',
+  leftPad: 10,
+  caption: 'BuzzFeed Playground: ' + chosenTemplate
+});
+
 generate(name, template, to, function(err) {
   if (err) {
     logger.fatal(err);
