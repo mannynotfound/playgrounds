@@ -4,7 +4,7 @@
 
 # playgrounds
 
-A service & framework for building internal demo sites.
+A service & framework for building demo sites.
 
 # Usage
 

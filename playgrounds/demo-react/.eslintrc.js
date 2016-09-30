@@ -9,9 +9,7 @@ module.exports = {
     'html',
     'react'
   ],
-  // add your custom rules here
-  'rules': {
-    // allow debugger during development
+  rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'react/jsx-no-undef': ['error'],
     'react/jsx-uses-react': ['error'],
@@ -28,7 +26,7 @@ module.exports = {
     'react/prop-types': ['error'],
     'object-curly-spacing': 0
   },
-  'ecmaFeatures': {
-    'jsx': true
+  ecmaFeatures: {
+    jsx: true
   }
 };

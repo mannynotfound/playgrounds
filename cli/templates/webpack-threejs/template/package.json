@@ -5,8 +5,8 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "node lib/dev-server.js",
-    "build": "node lib/build.js"{{#lint}},
+    "dev": "node config/dev-server.js",
+    "build": "node config/build.js"{{#lint}},
     "lint": "eslint ."{{/lint}}
   },
   "dependencies": {

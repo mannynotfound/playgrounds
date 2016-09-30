@@ -1,4 +1,4 @@
-# demo-react
+# demo-react-better
 
 > A BuzzFeed playground
 

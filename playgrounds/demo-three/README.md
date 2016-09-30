@@ -1,4 +1,4 @@
-# demo-three
+# demo-threejs-better
 
 > A BuzzFeed playground
 

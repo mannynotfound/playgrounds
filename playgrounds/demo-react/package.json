@@ -1,12 +1,12 @@
 {
-  "name": "demo-react",
+  "name": "demo-react-better",
   "version": "1.0.0",
   "description": "A BuzzFeed playground",
   "author": "manny <manuel.palou@buzzfeed.com>",
   "private": true,
   "scripts": {
-    "dev": "node lib/dev-server.js",
-    "build": "node lib/build.js",
+    "dev": "node config/dev-server.js",
+    "build": "node config/build.js",
     "lint": "eslint ."
   },
   "dependencies": {
