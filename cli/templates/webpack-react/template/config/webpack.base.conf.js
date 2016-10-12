@@ -68,6 +68,11 @@ module.exports = {
         }
       }
     ]
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   }{{#lint}},
   eslint: {
     formatter: require('eslint-friendly-formatter')

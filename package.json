@@ -2,11 +2,7 @@
   "name": "bf-playgrounds",
   "version": "1.0.0",
   "scripts": {
-    "build": "NODE_ENV=production webpack -c --progress",
-    "clean": "rm -rf build/*",
     "create": "./cli/bin/playgrounds create",
-    "prebuild": "npm run clean",
-    "prestart": "npm run build",
     "start": "NODE_ENV=production node ./server",
     "start:dev": "nodemon ./server --watch ./server",
     "test": "NODE_ENV=test mocha",
@@ -42,6 +38,7 @@
     "cors": "^2.7.1",
     "express": "~4.13.4",
     "feedparser": "^1.1.5",
-    "morgan": "~1.7.0"
+    "morgan": "~1.7.0",
+    "request": "^2.75.0"
   }
 }

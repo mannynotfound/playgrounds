@@ -1,3 +1,4 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var config = require('./env');
 var utils = require('./utils');
@@ -16,16 +17,15 @@ module.exports = {
     extensions: ['', '.js'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      src: path.resolve(__dirname, '../src'),
-      assets: path.resolve(__dirname, '../src/assets'),
-      components: path.resolve(__dirname, '../src/components')
+      'src': path.resolve(__dirname, '../src'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'components': path.resolve(__dirname, '../src/components')
     }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    {{#lint}}
     preLoaders: [
       {
         test: /\.js$/,
@@ -34,7 +34,6 @@ module.exports = {
         exclude: /node_modules/
       }
     ],
-    {{/lint}}
     loaders: [
       {
         test: /\.js$/,
@@ -72,9 +71,8 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty'
-  }{{#lint}},
+  },
   eslint: {
     formatter: require('eslint-friendly-formatter')
   }
-  {{/lint}}
 }

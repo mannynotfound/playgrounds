@@ -16,7 +16,7 @@ $ npm i
 $ npm run create <name> <optional template>
 ```
 
-## templates
+## Templates
 
 simple webpack (default):
 
@@ -58,6 +58,55 @@ Create new build:
 $ npm run build
 ```
 
+# API
+
+To include an API route, create an `/api/` folder with an `index.js` that exports an express `router`.
+
+
+eg:
+
+```
+import {Router} from 'express';
+import request from 'request'; // could be any request libary or even node's http
+
+router.get('/example', (req, res) => {
+    const reqOptions = {
+        headers: {
+            'User-Agent': 'example-app',
+        },
+    };
+
+    request.get(REPO_ROUTE, reqOptions, (err, resp) => {
+        // handle however you want
+        if (err) {
+            res.status(500).send(err);
+        } else if (resp.statusCode === 200) {
+            res.json(JSON.parse(resp.body));
+        } else {
+            res.send(resp);
+        }
+    });
+});
+```
+
+To make front end requests in your app, use your library of choice to send requests. We recommend using [superagent](https://www.npmjs.com/package/superagent).
+When making requests, the environment variable `BASE_API_URL` will be available to you.
+
+eg:
+
+```
+import request from 'superagent';
+request
+  .get(`${process.env.BASE_API_URL}/example`)
+  .set('Accept', 'application/json')
+  .end((err, resp) => {
+    document.getElementById('container').innerHTML = JSON.stringify(err || resp.body, 0, 2);
+  });
+```
+
+see `api-demo` in `/playgrounds` for a working demo of this.
+
+_NOTE: you will need to run the playgrounds server locally in tandem with your webpack server to use the api in development_
 
 # Features
 
