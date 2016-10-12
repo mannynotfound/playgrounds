@@ -60,8 +60,7 @@ $ npm run build
 
 # API
 
-To include an API route, create an `/api/` folder with an `index.js` that exports an express router.
-
+To include an API route, modify `api/index.js`.
 
 eg:
 
